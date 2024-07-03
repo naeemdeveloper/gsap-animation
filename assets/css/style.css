@@ -180,3 +180,12 @@ button.common {
 .big-title span {
     display: block;
 }
+
+.image-area {
+    height: 700px;
+    background-image: url('../../assets/images/header.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+}
