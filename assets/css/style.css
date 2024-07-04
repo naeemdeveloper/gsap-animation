@@ -34,7 +34,7 @@ h5 {
 }
 
 h6 {
-    color: #fd4f32;
+    color: #3FA2F6;
     font-size: 14px;
     margin-bottom: 0;
 }
@@ -109,11 +109,12 @@ img {
 
 /* Main CSS */
 .header-area {
-    padding: 250px 0;
-    background-image: url("../images/header.png");
+    padding: 350px 0;
+    background-image: url("../images/header.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    position: relative;
 }
 .header-area .logo-area img {
     width: 200px;
@@ -128,24 +129,36 @@ img {
 input.common,
 button.common {
     border: none;
-    padding: 5px 20px;
+    padding: 10px 20px;
 }
 
 button.common {
     color: #ffffff;
-    background: #fd4f32;
+    background: #3FA2F6;
     text-transform: uppercase;
     margin-left: -5px;
 }
 
 .destination-area {
     background: #eeeeee;
+    position: relative;
+    z-index: 1;
 }
 .destination-area .single-item {
     margin-bottom: 30px;
 }
 .destination-area .single-item .item-image {
     position: relative;
+    z-index: 9998;
+}
+.destination-area .single-item .item-image .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    z-index: 9995;
 }
 .destination-area .single-item .item-image .price {
     position: absolute;
@@ -168,13 +181,15 @@ button.common {
 }
 
 .big-title {
-    padding: 50px 0;
     color: #fff;
     background-color: #1a1a1a;
     font-size: 400px;
     font-weight: 500;
     line-height: 1em;
     text-transform: uppercase;
+    display: grid;
+    align-items: center;
+    height: 100vh;
 }
 
 .big-title span {
@@ -183,9 +198,59 @@ button.common {
 
 .image-area {
     height: 700px;
-    background-image: url('../../assets/images/header.png');
+    background-image: url('../../assets/images/image-area.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     overflow: hidden;
+}
+
+.custom-cursor {
+    width: 20px;
+    height: 20px;
+    background-color: yellow;
+    position: fixed;
+    z-index: 9990;
+    border-radius: 50%;
+}
+
+.menu-area {
+    width: 500px;
+    background-color: rgba(255, 255, 255, .4);
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: -500px;
+    z-index: 999;
+    padding: 50px 70px;
+    text-align: left;
+    backdrop-filter: blur(10px);
+}
+
+.menu-area ul {
+    margin-top: 50px;
+}
+.menu-area ul li a {
+    color: #111;
+    font-size: 60px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.navbar-open {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    cursor: pointer;
+    color: #111;
+    font-size: 30px;
+}
+
+.navbar-close {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    cursor: pointer;
+    color: #111;
+    font-size: 30px;
 }
