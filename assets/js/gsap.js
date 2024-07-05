@@ -86,3 +86,28 @@ navbarOpen.addEventListener('click', function(){
 navbarClose.addEventListener('click', function(){
     menuArea.reverse()
 })
+
+
+// Function to handle smooth scrolling
+function smoothScroll(event) {
+    event.preventDefault();
+
+    // Determine the scroll amount (you can adjust the multiplier for speed)
+    const scrollAmount = event.deltaY * 2;
+
+    // Get the current scroll position
+    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+    // Use GSAP to animate the scroll position
+    gsap.to(window, {
+        duration: 0.5,
+        scrollTo: {
+            y: currentScroll + scrollAmount,
+            autoKill: true  // Ensures that the animation is killed if the user scrolls manually
+        },
+        ease: "power2.out"
+    });
+}
+
+// Add the event listener for mouse wheel events
+window.addEventListener('wheel', smoothScroll, { passive: false });
